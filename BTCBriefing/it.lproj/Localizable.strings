@@ -1,0 +1,59 @@
+/* Tabs */
+"tab.briefing" = "Briefing";
+"tab.history" = "Storico";
+"tab.settings" = "Impostazioni";
+
+/* Briefing */
+"briefing.indicators.daily" = "── Indicatori Daily (live) ──";
+"briefing.bias" = "── Bias ──";
+"briefing.candles4h" = "── Candele 4H recenti ──";
+"briefing.candles1h" = "── Candele 1H recenti ──";
+"briefing.fib" = "── Fibonacci ──";
+"briefing.forming" = "in corso";
+"briefing.cached" = "[CACHE]";
+"briefing.loading" = "Recupero dati di mercato...";
+"briefing.refresh" = "Prossimo aggiornamento:";
+"briefing.refresh.now" = "Aggiorna ora";
+
+/* Settings */
+"settings.title" = "Impostazioni";
+"settings.provider" = "Provider dati";
+"settings.pair" = "Coppia";
+"settings.interval" = "Intervallo refresh";
+"settings.theme" = "Tema terminale";
+"settings.sections" = "Sezioni visibili";
+"settings.notifications" = "Notifiche";
+"settings.notif.enabled" = "Abilita notifiche";
+
+/* History */
+"history.title" = "Storico";
+"history.empty" = "Nessun briefing ancora.\nAggiorna nella scheda Briefing.";
+"history.clear" = "Cancella";
+
+/* Donate */
+
+/* Intro */
+"intro.title" = "BTC Briefing";
+"intro.subtitle" = "Analisi di mercato Bitcoin in tempo reale";
+"intro.description" = "Prezzo live, indicatori tecnici, livelli Fibonacci e bias di mercato — da API pubbliche. Nessuna registrazione richiesta.";
+"intro.start" = "Inizia";
+"intro.provider" = "Provider dati";
+"intro.interval" = "Intervallo refresh";
+
+/* Sections */
+"section.indicators" = "Indicatori";
+"section.candles" = "Candele";
+"section.fibonacci" = "Fibonacci";
+
+/* Notifications */
+"notif.bias.title" = "Bias cambiato";
+
+"tab.about" = "Info";
+"about.disclaimer.header" = "DISCLAIMER";
+"about.disclaimer.text" = "Solo a scopo informativo.\nNon costituisce consulenza finanziaria.";
+"about.sources.header" = "FONTI DATI";
+"about.sources.note" = "Solo API pubbliche — nessuna autenticazione richiesta.";
+"about.support.header" = "SUPPORTA IL PROGETTO";
+"about.support.text" = "Se trovi utile questa app, puoi supportare lo sviluppo inviando BTC all'indirizzo qui sotto.";
+"about.copy" = "Copia indirizzo BTC";
+"about.copied" = "Copiato!";

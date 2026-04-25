@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1A"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFB84D"/>
+      <stop offset="100%" stop-color="#E87A00"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="200" fill="url(#bg)"/>
+
+  <!-- Sottile linea centrale verticale -->
+  <line x1="512" y1="140" x2="512" y2="884"
+        stroke="#F7931A" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- B sinistra (normale — spine a sx, bumps verso centro) -->
+  <text
+    x="58" y="730"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-weight="bold"
+    font-size="620"
+    fill="url(#orange)"
+    filter="url(#glow)">B</text>
+
+  <!-- B destra (specchiata — spine a dx, bumps verso centro) -->
+  <g transform="translate(1024,0) scale(-1,1)">
+    <text
+      x="58" y="730"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-weight="bold"
+      font-size="620"
+      fill="url(#orange)"
+      filter="url(#glow)">B</text>
+  </g>
+
+  <!-- Label sotto piccolo -->
+  <text
+    x="512" y="960"
+    font-family="'Courier New', Courier, monospace"
+    font-size="52"
+    fill="#F7931A"
+    opacity="0.55"
+    text-anchor="middle"
+    letter-spacing="18">BTC BRIEFING</text>
+</svg>

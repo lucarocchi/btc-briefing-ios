@@ -1,0 +1,59 @@
+/* Tabs */
+"tab.briefing" = "Briefing";
+"tab.history" = "History";
+"tab.settings" = "Settings";
+
+/* Briefing */
+"briefing.indicators.daily" = "── Daily Indicators (live) ──";
+"briefing.bias" = "── Bias ──";
+"briefing.candles4h" = "── 4H Recent ──";
+"briefing.candles1h" = "── 1H Recent ──";
+"briefing.fib" = "── Fibonacci ──";
+"briefing.forming" = "forming";
+"briefing.cached" = "[CACHED]";
+"briefing.loading" = "Fetching market data...";
+"briefing.refresh" = "Next refresh:";
+"briefing.refresh.now" = "Refresh Now";
+
+/* Settings */
+"settings.title" = "Settings";
+"settings.provider" = "Data Provider";
+"settings.pair" = "Trading Pair";
+"settings.interval" = "Refresh Interval";
+"settings.theme" = "Terminal Theme";
+"settings.sections" = "Visible Sections";
+"settings.notifications" = "Notifications";
+"settings.notif.enabled" = "Enable Notifications";
+
+/* History */
+"history.title" = "History";
+"history.empty" = "No briefings yet.\nPull to refresh on the Briefing tab.";
+"history.clear" = "Clear";
+
+/* Donate */
+
+/* Intro */
+"intro.title" = "BTC Briefing";
+"intro.subtitle" = "Real-time Bitcoin Market Analysis";
+"intro.description" = "Live price, technical indicators, Fibonacci levels and market bias — all from public APIs. No signup required.";
+"intro.start" = "Get Started";
+"intro.provider" = "Data Provider";
+"intro.interval" = "Refresh Interval";
+
+/* Sections */
+"section.indicators" = "Indicators";
+"section.candles" = "Candles";
+"section.fibonacci" = "Fibonacci";
+
+/* Notifications */
+"notif.bias.title" = "Bias Changed";
+
+"tab.about" = "About";
+"about.disclaimer.header" = "DISCLAIMER";
+"about.disclaimer.text" = "For informational purposes only.\nNot financial advice.";
+"about.sources.header" = "DATA SOURCES";
+"about.sources.note" = "All public APIs — no authentication required.";
+"about.support.header" = "SUPPORT DEVELOPMENT";
+"about.support.text" = "If you find this app useful, you can support development by sending BTC to the address below.";
+"about.copy" = "Copy BTC Address";
+"about.copied" = "Copied!";
