@@ -29,3 +29,7 @@ Icon?
 # SPM
 .build/
 .swiftpm/
+
+# Claude Code
+.claude/
+CLAUDE.md
