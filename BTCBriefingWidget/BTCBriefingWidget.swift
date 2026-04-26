@@ -20,11 +20,28 @@ struct BTCWidgetProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<BTCWidgetEntry>) -> Void) {
-        let entry = BTCWidgetEntry(date: Date(), briefing: HistoryManager.loadLast())
-        // Aggiorna ogni 15 minuti (limite iOS WidgetKit)
+        var cached = HistoryManager.loadLast()
         let next = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
-        let timeline = Timeline(entries: [entry], policy: .after(next))
-        completion(timeline)
+
+        // Fetch ticker live per avere il prezzo aggiornato
+        guard let url = URL(string: "https://api.kraken.com/0/public/Ticker?pair=XBTUSD") else {
+            let timeline = Timeline(entries: [BTCWidgetEntry(date: Date(), briefing: cached)],
+                                    policy: .after(next))
+            completion(timeline)
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            if let data, let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+               let result = (json["result"] as? [String: Any])?.values.first as? [String: Any],
+               let lastArr = result["c"] as? [String],
+               let price = Double(lastArr[0]) {
+                cached?.price = price
+            }
+            let entry = BTCWidgetEntry(date: Date(), briefing: cached)
+            let timeline = Timeline(entries: [entry], policy: .after(next))
+            completion(timeline)
+        }.resume()
     }
 }
 

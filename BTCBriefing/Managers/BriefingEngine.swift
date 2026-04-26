@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import WidgetKit
 
 @MainActor
 class BriefingEngine: ObservableObject {
@@ -39,6 +40,7 @@ class BriefingEngine: ObservableObject {
             let data = try await fetchAndCompute(settings: settings)
             briefing = data
             HistoryManager.shared.save(data)
+            WidgetCenter.shared.reloadAllTimelines()
             NotificationManager.shared.handleNewBriefing(data, settings: settings)
         } catch {
             errorMessage = error.localizedDescription
