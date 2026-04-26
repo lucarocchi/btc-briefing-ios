@@ -5,7 +5,6 @@ import SwiftUI
 enum DataProvider: String, CaseIterable, Codable {
     case kraken = "Kraken"
     case binance = "Binance"
-    case coinGecko = "CoinGecko"
 
     var displayName: String { rawValue }
 }
@@ -33,12 +32,6 @@ enum TradingPair: String, CaseIterable, Codable {
         switch self {
         case .btcUSD: return "BTCUSDT"
         case .btcEUR: return "BTCEUR"
-        }
-    }
-    var coinGeckoVsCurrency: String {
-        switch self {
-        case .btcUSD: return "usd"
-        case .btcEUR: return "eur"
         }
     }
     var currencySymbol: String {

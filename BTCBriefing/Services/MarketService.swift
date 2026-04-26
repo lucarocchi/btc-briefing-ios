@@ -28,9 +28,8 @@ enum ServiceError: LocalizedError {
 extension DataProvider {
     func makeService() -> any MarketService {
         switch self {
-        case .kraken:   return KrakenService()
-        case .binance:  return BinanceService()
-        case .coinGecko: return CoinGeckoService()
+        case .kraken:  return KrakenService()
+        case .binance: return BinanceService()
         }
     }
 }

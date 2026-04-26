@@ -13,10 +13,12 @@ struct CoinGeckoService: MarketService {
         let (data, _) = try await URLSession.shared.data(from: url)
         let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
         guard let btc = json["bitcoin"] as? [String: Any],
-              let price  = btc[vs]             as? Double,
-              let high   = btc["\(vs)_24h_high"] as? Double,
-              let low    = btc["\(vs)_24h_low"]  as? Double
+              let price = btc[vs] as? Double
         else { throw ServiceError.parse("CoinGecko ticker") }
+
+        // 24h high/low non disponibili nel free tier senza API key
+        let high = btc["\(vs)_24h_high"] as? Double ?? price
+        let low  = btc["\(vs)_24h_low"]  as? Double ?? price
 
         return TickerData(price: price, high24h: high, low24h: low)
     }
