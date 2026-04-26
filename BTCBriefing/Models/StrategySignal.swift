@@ -3,7 +3,7 @@ import SwiftUI
 // MARK: - Stato del segnale
 
 enum SignalState {
-    case neutro, watch, segnale, lontano, attivo
+    case neutro, watch, segnale, lontano
 
     var label: String {
         switch self {
@@ -11,7 +11,6 @@ enum SignalState {
         case .watch:   return "WATCH ⚠️"
         case .segnale: return "SEGNALE ✅"
         case .lontano: return "LONTANO"
-        case .attivo:  return "ATTIVO"
         }
     }
 
@@ -21,7 +20,6 @@ enum SignalState {
         case .watch:   return .yellow
         case .segnale: return .green
         case .lontano: return .gray
-        case .attivo:  return .cyan
         }
     }
 }
@@ -123,14 +121,6 @@ enum Strategies {
             id: "S04", name: "Weekly", direction: "LONG",
             metric: b.ema200Weekly > 0 ? "EMA200W \(fmtP(distW))" : "—",
             state: s04
-        ))
-
-        // S05 — Wick Catcher (sempre attivo, target -5% dal live)
-        let wickTarget = b.price * 0.95
-        out.append(StrategySignal(
-            id: "S05", name: "Wick", direction: "—",
-            metric: "target \(sym)\(fmtN(wickTarget))",
-            state: .attivo
         ))
 
         return out

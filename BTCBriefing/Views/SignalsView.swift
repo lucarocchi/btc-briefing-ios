@@ -148,7 +148,7 @@ struct SignalsView: View {
         add("  NEUTRO  nessuna condizione attiva", theme.dimColor)
         add("  WATCH   vicino al trigger (< 5%)", .yellow)
         add("  SEGNALE condizioni soddisfatte", .green)
-        add("  ATTIVO  sempre monitorato", .cyan)
+        add("  LONTANO fuori zona trigger",       theme.dimColor)
         sep()
 
         return lines

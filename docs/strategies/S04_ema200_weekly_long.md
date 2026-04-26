@@ -15,7 +15,6 @@ Alta discrezionalità, pochi trade, grandi movimenti.
 |--------|--------|
 | Low weekly ≤ EMA200 weekly | La candela tocca la media |
 | Close settimana precedente > EMA200 | Eravamo sopra — non è un breakdown |
-| Candle type ≠ bear / marubozu_bear | No candele fortemente ribassiste |
 
 **Entry:** Market LONG al lunedì successivo (apertura settimana)
 
@@ -24,10 +23,11 @@ Alta discrezionalità, pochi trade, grandi movimenti.
 |------|---------|
 | Take Profit | +8% dall'entry |
 | Stop Loss | −10% dall'entry |
+| Timeout | close dopo 40 giorni |
 
 ## Backtest
 
-**Periodo:** 2020-02-11 → 2026-04-07
+**Periodo:** 2020-03-16 → 2026-04-13
 **Fee:** 0.52% round-trip (taker Kraken)
 **Dimensione:** spot 1x (senza leva)
 
@@ -35,35 +35,38 @@ Alta discrezionalità, pochi trade, grandi movimenti.
 
 | Metrica | Valore |
 |---------|--------|
-| Totale trade | 13 |
-| Win Rate | **61.5%** |
-| Trade vincenti | 8 |
-| Trade perdenti | 5 |
-| TP hit | 7 |
-| SL hit | 5 |
-| Timeout (>90 giorni) | 1 |
-| Avg win | +6.99% |
-| Avg loss | -10.52% |
-| **Total PnL (spot 1x)** | **+3.29%** |
-| Max Drawdown | -16.60% |
+| Totale trade | 17 |
+| Win Rate | **82.4%** |
+| Trade vincenti | 14 |
+| Trade perdenti | 3 |
+| TP hit | 13 |
+| SL hit | 2 |
+| Timeout | 2 |
+| Avg win | +6.86% |
+| Avg loss | -7.72% |
+| **Total PnL (spot 1x)** | **+75.74%** |
 
 ### Trade per trade
 
-| Data segnale | Entry | Exit | Risultato | PnL |
-|---|---|---|---|---|
-| 2020-02-11 | $9,702 | $8,732 | SL | -10.52% |
-| 2020-02-18 | $9,662 | $8,696 | SL | -10.52% |
-| 2020-06-02 | $9,782 | $10,565 | TP | +7.48% |
-| 2020-06-16 | $9,694 | $10,470 | TP | +7.48% |
-| 2022-05-10 | $29,826 | $32,212 | TP | +7.48% |
-| 2022-05-24 | $31,710 | $28,539 | SL | -10.52% |
-| 2023-05-09 | $27,166 | $29,339 | TP | +7.48% |
-| 2023-05-23 | $27,741 | $24,967 | SL | -10.52% |
-| 2023-09-26 | $27,501 | $29,701 | TP | +7.48% |
-| 2026-02-03 | $70,104 | $63,094 | SL | -10.52% |
-| 2026-02-10 | $68,860 | $74,369 | TP | +7.48% |
-| 2026-03-03 | $68,447 | $73,923 | TP | +7.48% |
-| 2026-04-07 | $74,441 | $77,455 | TIMEOUT | +3.53% |
+| Data segnale | Entry | Exit | Tipo candela | Risultato | PnL |
+|---|---|---|---|---|---|
+| 2020-03-16 | $5,821 | $6,286 | bear | TP | +7.48% |
+| 2020-03-30 | $6,779 | $7,321 | doji_neutral | TP | +7.48% |
+| 2022-05-16 | $30,264 | $27,238 | hammer_bull | SL | -10.52% |
+| 2022-06-13 | $20,550 | $22,194 | marubozu_bear | TP | +7.48% |
+| 2023-06-19 | $30,447 | $29,047 | bull | TIMEOUT | -5.12% |
+| 2023-08-21 | $26,087 | $28,174 | marubozu_bear | TP | +7.48% |
+| 2023-08-28 | $25,969 | $28,047 | doji_neutral | TP | +7.48% |
+| 2023-09-04 | $25,830 | $27,896 | shooting_star_bear | TP | +7.48% |
+| 2023-09-11 | $26,540 | $28,663 | bear | TP | +7.48% |
+| 2026-02-09 | $68,780 | $74,282 | neutral | TP | +7.48% |
+| 2026-02-16 | $67,612 | $73,021 | hammer_bull | TP | +7.48% |
+| 2026-02-23 | $65,764 | $71,025 | marubozu_bear | TP | +7.48% |
+| 2026-03-09 | $72,827 | $65,544 | shooting_star_bear | SL | -10.52% |
+| 2026-03-16 | $67,857 | $73,286 | marubozu_bull | TP | +7.48% |
+| 2026-03-23 | $65,950 | $71,226 | bear | TP | +7.48% |
+| 2026-03-30 | $68,984 | $74,503 | bear | TP | +7.48% |
+| 2026-04-13 | $73,828 | $77,648 | marubozu_bull | TIMEOUT | +4.66% |
 
 ---
 *Backtest eseguito su dati OHLCV Kraken XBTUSD. Non include slippage.*
