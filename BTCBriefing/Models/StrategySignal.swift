@@ -78,27 +78,6 @@ enum Strategies {
             state: s02
         ))
 
-        // S03 — EMA200 Limit 4H
-        // Segnale: |close4H - EMA200_4H| / EMA200_4H <= 5%
-        let dist4h = b.ema200_4h > 0
-            ? (b.price - b.ema200_4h) / b.ema200_4h * 100
-            : 0
-        let s03: SignalState
-        if b.ema200_4h == 0 {
-            s03 = .neutro
-        } else if abs(dist4h) <= 1 {
-            s03 = .segnale
-        } else if abs(dist4h) <= 5 {
-            s03 = .watch
-        } else {
-            s03 = .neutro
-        }
-        out.append(StrategySignal(
-            id: "S03", name: "4H EMA", direction: "LONG",
-            metric: b.ema200_4h > 0 ? "EMA200 4H \(fmtP(dist4h))" : "—",
-            state: s03
-        ))
-
         // S04 — EMA200 Weekly LONG
         // Segnale: lowWeekly tocca EMA200W AND prevClose > EMA200W AND !bear
         let s04: SignalState
